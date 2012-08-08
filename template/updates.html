@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Welcome to Friendz</title>
+    <link rel="stylesheet" href="http://dl.dropbox.com/u/7094141/lay1.css" type="text/css"/>
+</head>
+<div class="wrapper">
+    <div class="header">
+    </div>
+    <div class="content">
+    {% if upd %}
+	{{ upd.user_id }} says:
+	{{ upd.text }}
+	{% endif %}
+	{% if errors %}
+	{{ errors }}
+	{% endif %}
+	<br>
+	<a href="/home/">Back</a>
+    </div>
+    <div class="footer" align="center">
+        <br>A website by Ali Alavi
+        <br>#40876144
+        <br>alialavi@gmail.com
+    </div>
+</div>	
+</body>
+</html>

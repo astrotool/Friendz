@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="30" scope="col">&nbsp;</th>
+    <th width="158" scope="col">&nbsp;</th>
+    <th width="4" scope="col">&nbsp;</th>
+    <th width="359" scope="col">&nbsp;</th>
+    <th width="191" scope="col"><a href="/getsess/">logout</a></th>
+    <th width="58" scope="col"><a href="/logout/">logout</a></th>
+  </tr>
+  <tr>
+    <td colspan="6"><p>You are loged in! Welcome{% if uname  %} {% for name in uname %} {{ name  }}  {% endfor %} {% endif %};</p></td>
+  </tr>
+  <tr>
+    <td colspan="6">Notifications:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><ul>{% if updates  %} {% for update in updates %} <li><a href="">{{ update }} </a></li> {% endfor %} {% endif %}</ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>{% if fname  %} {% for name in fname %} {{ name  }}  {% endfor %} {% endif %}</td>
+    <td><ul>{% if fupdates  %} {% for fupdate in fupdates %} <li><a href="">{{ fupdate }} </a></li> {% endfor %} {% endif %}</ul></td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>Welcome {{ uname.capitalize  }}</title>
+        <link rel="stylesheet" href="http://dl.dropbox.com/u/7094141/lay1.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+    <div class="header">
+       	<form action="/search/" method="get">{% csrf_token %}
+	&nbsp;Search Friendz:<input type="text" size="35" name="q"><input type="submit" value="Submit">
+	<br><br><br><br><br><a href="/logout/">&nbsp;Logout</a>&nbsp;&nbsp;&nbsp;<a href="/latest/feed/">Rss</a>
+	</form>
+    </div>
+    <div class="content">
+        <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="30" scope="col">&nbsp;</th>
+    <th width="158" scope="col">&nbsp;</th>
+    <th width="4" scope="col">&nbsp;</th>
+    <th width="359" scope="col">&nbsp;</th>
+    <th width="191" scope="col"></th>
+    <th width="58" scope="col"></th>
+  </tr>
+  <tr>
+    <td colspan="6"><h3>You are loged in! Welcome{% if uname  %} {% for name in uname %} {{ name.capitalize  }}  {% endfor %} {% endif %}</h3></td>
+    </tr>
+    <td colspan="6"><form action="/addupdate/" method="post">{% csrf_token %}<b>Add an update:</b><br><textarea rows="3" cols="30" name="update"></textarea><br><input type="submit" value="Submit"></form></td>
+    </tr>
+  <tr>
+    <td colspan="6"><h4>Your recent udates:</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="6"><ul>{% if updates  %} {% for update in updates %} <li>{{ update.time }} <a href="/update/{{ update.id }}/"> {{ update.text }} </a></li> {% endfor %} {% endif %}</ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6">{% if fname  %}<b>Friend  {% for name in fname %} {{ name.capitalize  }}  {% endfor %} Updates:{% endif %}</b></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="6">{% if fupdates  %}  <ul> {% for x in fupdates %} {{ x.time }}<li><a href="/update/{{ x.id }}/"> {{ x.text }} </a></li>{% endfor %}  </ul>{% endif %} </td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>
+</td>
+  </tr>
+</table>
+    </div>
+    <div class="footer" align="center">
+        <br>A website by Ali Alavi
+        <br>#40876144
+        <br>alialavi@gmail.com
+    </div>
+</div>
+
+
+
+</body>
+</html>

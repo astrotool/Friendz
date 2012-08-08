@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Results for {{ query }}</title>
+    <link rel="stylesheet" href="http://dl.dropbox.com/u/7094141/lay1.css" type="text/css"/>
+</head>
+<div class="wrapper">
+    <div class="header">
+        </div>
+    <div class="content">
+        	{% if query %}
+		{% if results %}
+			{% for users in results %}
+			{{ users.first.capitalize }} {{ users.last.capitalize }} <a href="/adduser/{{ users.email }}/">Add as friend!</a></br>
+			{% endfor %}
+		{% else %}
+		No users found.
+		{% endif %}
+	{% endif %}
+	<br><a href="/home/">Back</a>
+    </div>
+    <div class="footer" align="center">
+        <br>A website by Ali Alavi
+        <br>#40876144
+        <br>alialavi@gmail.com
+    </div>
+</div>
+
+
+	
+</body>
+</html>
